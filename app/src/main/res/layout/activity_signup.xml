@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ln_whole"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DEE2E6"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Register_Login.Activity_Signup">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text= "회원가입"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/neodunggeunmoproregular">
+    </TextView>
+
+
+
+    <EditText
+        android:id="@+id/et_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="20dp"
+        android:height="48dp"
+        android:background="@drawable/round"
+        android:textAlignment="center"
+        android:hint="닉네임"
+        android:fontFamily="@font/neodunggeunmoproregular">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="20dp"
+        android:height="48dp"
+        android:background="@drawable/round"
+        android:hint="아이디(이메일)"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:fontFamily="@font/neodunggeunmoproregular">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="20dp"
+        android:height="48dp"
+        android:background="@drawable/round"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:hint="비밀번호"
+        android:fontFamily="@font/neodunggeunmoproregular">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/et_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="20dp"
+        android:height="48dp"
+        android:background="@drawable/round"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:hint="비밀번호 확인"
+        android:fontFamily="@font/neodunggeunmoproregular">
+
+    </EditText>
+
+
+    <Spinner
+        android:id="@+id/sp_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="20dp"
+        android:height="48dp"
+        android:background="@drawable/spinner_ranking1"
+
+        />
+
+    <Spinner
+        android:id="@+id/sp_region"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="20dp"
+        android:height="48dp"
+        android:background="@drawable/spinner_ranking1"
+        />
+    <Button
+        android:id = "@+id/btn_birth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:height="48dp"
+        android:text = "생년월일선택"
+        android:fontFamily="@font/neodunggeunmoproregular"
+        >
+    </Button>
+
+
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:height="48dp"
+        android:text="회원가입"
+        android:fontFamily="@font/neodunggeunmoproregular"
+        >
+    </Button>
+
+</LinearLayout>
+

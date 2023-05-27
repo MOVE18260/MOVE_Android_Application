@@ -1,0 +1,302 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- 포인트 표시 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal"
+        >
+
+        <!-- 포인트 이미지 -->
+        <ImageView
+            android:id="@+id/point_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/point" />
+
+        <!-- 포인트 텍스트 -->
+        <TextView
+            android:id="@+id/point_text"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:text="포인트 : "
+            android:textSize="16dp"
+            android:padding="4dp"
+            android:fontFamily="@font/neodunggeunmoproregular"/>
+
+        <!-- 포인트 실제 입력 값 -->
+        <TextView
+            android:id="@+id/point_text_input"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:textSize="16dp"
+            android:fontFamily="@font/neodunggeunmoproregular"/>
+    </LinearLayout>
+
+    <!-- 상점 스크롤-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp">
+
+        <!-- 상점 아이템 컨테이너 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 상점 아이템 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- 아이템 이미지 -->
+                <ImageView
+                    android:id="@+id/shop_item_image1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/hat" />
+
+                <!-- 아이템 정보 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp">
+
+                    <!-- 아이템 이름 -->
+                    <TextView
+                        android:id="@+id/shop_item1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="모자"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/neodunggeunmoproregular"/>
+
+                    <!-- 아이템 가격 -->
+                    <TextView
+                        android:id="@+id/shop_item_price1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가격 : 500"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/neodunggeunmoproregular"/>
+
+                    <!-- 아이템 설명 -->
+                    <TextView
+                        android:id="@+id/shop_description1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이 아이템을 사면 공룡에 모자가 씌워진답니다.."
+                        android:textSize="14sp"
+                        android:fontFamily="@font/neodunggeunmoproregular"/>
+                </LinearLayout>
+
+                <!-- 구매 버튼 -->
+                <Button
+                    android:id="@+id/buy_button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="구매"
+                    android:fontFamily="@font/neodunggeunmoproregular"/>
+            </LinearLayout>
+
+            <!-- 상점 아이템 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- 아이템 이미지 -->
+                <ImageView
+                    android:id="@+id/shop_item_image2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/bag" />
+
+                <!-- 아이템 정보 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp">
+
+                    <!-- 아이템 이름 -->
+                    <TextView
+                        android:id="@+id/shop_item2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가방"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/neodunggeunmoproregular"/>
+
+                    <!-- 아이템 가격 -->
+                    <TextView
+                        android:id="@+id/shop_item_price2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가격: 1000"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/neodunggeunmoproregular"/>
+
+                    <!-- 아이템 설명 -->
+                    <TextView
+                        android:id="@+id/shop_item_description2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이 아이템을 사면 공룡이 가방을 매요!"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/neodunggeunmoproregular"/>
+                </LinearLayout>
+
+                <!-- 구매 버튼 -->
+                <Button
+                    android:id="@+id/buy_button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="구매"
+                    android:fontFamily="@font/neodunggeunmoproregular"/>
+            </LinearLayout>
+
+            <!-- 상점 아이템 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- 아이템 이미지 -->
+                <ImageView
+                    android:id="@+id/shop_item_image3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/helicopter" />
+
+                <!-- 아이템 정보 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp">
+
+                    <!-- 아이템 이름 -->
+                    <TextView
+                        android:id="@+id/shop_item3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="대나무 헬리콥터"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/neodunggeunmoproregular"/>
+
+                    <!-- 아이템 가격 -->
+                    <TextView
+                        android:id="@+id/shop_item_price3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가격: 800"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/neodunggeunmoproregular"/>
+
+                    <!-- 아이템 설명 -->
+                    <TextView
+                        android:id="@+id/shop_item_description3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="도라에몽의 대나무 헬리콥터"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/neodunggeunmoproregular"/>
+                </LinearLayout>
+
+                <!-- 구매 버튼 -->
+                <Button
+                    android:id="@+id/buy_button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="구매"
+                    android:fontFamily="@font/neodunggeunmoproregular"/>
+            </LinearLayout>
+
+            <!-- 상점 아이템 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                >
+
+                <!-- 아이템 이미지 -->
+                <ImageView
+                    android:id="@+id/shop_item_image4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/christmastree" />
+
+                <!-- 아이템 정보 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp">
+
+                    <!-- 아이템 이름 -->
+                    <TextView
+                        android:id="@+id/shop_item4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="크리스마스 트리"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/neodunggeunmoproregular"/>
+
+                    <!-- 아이템 가격 -->
+                    <TextView
+                        android:id="@+id/shop_item_price4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가격: 1000"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/neodunggeunmoproregular"/>
+
+                    <!-- 아이템 설명 -->
+                    <TextView
+                        android:id="@+id/shop_item_description4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12.25!!"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/neodunggeunmoproregular"/>
+                </LinearLayout>
+
+                <!-- 구매 버튼 -->
+                <Button
+                    android:id="@+id/buy_button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="구매"
+                    android:fontFamily="@font/neodunggeunmoproregular"/>
+            </LinearLayout>
+            <!-- Apply 버튼 -->
+            <Button
+                android:id="@+id/apply_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="적용시키러 가기"
+                android:textSize="18sp"
+                android:fontFamily="@font/neodunggeunmoproregular"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

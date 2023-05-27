@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register_Login.Activity_SignupDone"
+    android:gravity="center"
+    android:background="#DEE2E6"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="환영합니다!"
+        android:textColor="@color/black"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/neodunggeunmoproregular"/>
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:text="아무개님!"
+        android:textStyle="bold"
+        android:fontFamily="@font/neodunggeunmoproregular"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:text="힘차게 달려보세요!"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/neodunggeunmoproregular"/>
+
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:background="#8D99AE"
+        android:text="시작하기"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/neodunggeunmoproregular"/>
+
+</LinearLayout>

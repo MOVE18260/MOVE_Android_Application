@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Move_Whole_Project</string>
+    <string name="cancel">취소</string>
+    <string name="confirm">확인</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <style name="SpinnerStyle" parent="Widget.AppCompat.Spinner.Underlined">
+        <item name="android:background">@color/white</item>
+    </style>
+    <!-- 7일 1달 스피너 -->
+    <string-array name="time_range_options">
+        <item><font color="#000000">1주</font></item>
+        <item><font color="#000000">1달</font></item>
+        <item><font color="#000000">1년</font></item>
+    </string-array>
+</resources>

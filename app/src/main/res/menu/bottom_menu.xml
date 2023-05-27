@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="홈"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/mission"
+        android:enabled="true"
+        android:icon="@drawable/ic_mission"
+        android:title="미션"
+        app:showAsAction="always"
+        />
+
+
+    <item
+        android:id="@+id/record"
+        android:enabled="true"
+        android:icon="@drawable/ic_record"
+        android:title="프로필"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/shop"
+        android:enabled="true"
+        android:icon="@drawable/ic_shop"
+        android:title="상점"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/avatar"
+        android:enabled="true"
+        android:icon="@drawable/ic_shop"
+        android:title="아바타"
+        app:showAsAction="always"/>
+</menu>
