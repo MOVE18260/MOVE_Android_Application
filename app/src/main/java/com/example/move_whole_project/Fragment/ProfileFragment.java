@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -46,11 +47,14 @@ public class ProfileFragment extends Fragment {
     private String[] spinner_months = {"1주", "2주", "3주", "4주", "5주"}; // 1달 x축 값
     private String[] spinner_year = {"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"}; // 1년 x축 값
 
+    // 닉네임 텍스트뷰
+    private TextView tv_profile_name;
 
     // 프로필 사진 클릭 이벤트
     private ActivityResultLauncher<Intent> pickImageLauncher;
     private ImageView profileImageView;
     private static final int PICK_IMAGE_REQUEST = 1;
+
 
     // json 변수
     private Map<String, String> map;
@@ -103,6 +107,12 @@ public class ProfileFragment extends Fragment {
         barChart = view.findViewById(R.id.tv_profile_graph_input);
         profileImageView = view.findViewById(R.id.tv_profile_image);
         spinnerTimeRange = view.findViewById(R.id.spinner_time_range);
+
+        // 텍스트뷰와 메인 액티비티로 부터 넘어온 데이터 변수에 담기, 설정
+        tv_profile_name = view.findViewById(R.id.tv_profile_name);
+        String Nickname = this.getArguments().getString("nickname");
+        tv_profile_name.setText(Nickname);
+
         // 바 차트
         List<BarEntry> stepData = new ArrayList<>();
         barChart.setFitBars(true); // 막대 그래프의 막대를 차트에 꽉 채우도록 설정
@@ -223,50 +233,5 @@ public class ProfileFragment extends Fragment {
             }
         }
     }
-}   // 지워도 됩니다, 로직은 맞는거 같은데 흠..
-//        private void sendJsonDataToServer (String dateTime ,int distance, String location, int memberId, int step){
-//            String url = "http://192.168.0.76:8080"; // 서버의 URL로 변경해주세요
-//
-//            // JSON 데이터 생성
-//            JSONObject json = new JSONObject();
-//            try {
-//                json.put("dateTime", dateTime);
-//                json.put("distance", distance);
-//                json.put("location", location);
-//                json.put("memberId", memberId);
-//                json.put("step", step);
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//
-//            // 요청 생성
-//            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, json,
-//                    new Response.Listener<JSONObject>() {
-//                        @Override
-//                        public void onResponse(JSONObject response) {
-//                            // 응답 처리
-//                            try {
-//                                boolean success = response.getBoolean("success");
-//                                if (success) {
-//                                    sendJsonDataToServer(dateTime, distance, location, memberId, step);
-//                                } else {
-//                                    // 서버로 데이터 전송 실패 또는 서버에서 응답 실패
-//                                }
-//                            } catch (JSONException e) {
-//                                e.printStackTrace();
-//                            }
-//                        }
-//                    },
-//                    new Response.ErrorListener() {
-//                        @Override
-//                        public void onErrorResponse(VolleyError error) {
-//                            // 에러 처리
-//                            error.printStackTrace();
-//                        }
-//                    });
-//
-//            // 요청을 큐에 추가
-//            RequestQueue queue = Volley.newRequestQueue(getContext());
-//            queue.add(request);
-//}
+}
 

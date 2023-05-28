@@ -33,7 +33,6 @@ public class Activity_Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         et_id = findViewById(R.id.et_id);
         et_pass = findViewById(R.id.et_pass);
         btn_login = findViewById(R.id.btn_login);
@@ -83,13 +82,22 @@ public class Activity_Login extends AppCompatActivity {
 
                                 if(success){ // 로그인에 성공한 경우
 
-                                    // php 파일에서 키값으로 설정한대로 getString 안을 채워준다.
-                                    // key 값으로 json 값을 가져온다.
+                                    // 서버에서 보내주는 데이터
+                                    String Nickname = jsonObject.getString("nickname");
+                                    String Email = jsonObject.getString("email");
+                                    String Sex = jsonObject.getString("sex");
+                                    String Province = jsonObject.getString("province");
+
+                                    Log.d("닉네임",Nickname);
+                                    Log.d("이메일",Email);
+                                    Log.d("성별",Sex);
+                                    Log.d("지역",Province);
 
                                     Toast.makeText(getApplicationContext(), "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
 
                                     Intent intent = new Intent(Activity_Login.this, Activity_Main.class);
                                     // 다음 인텐트로 넘어갈때 이곳에서 작성했던 내용을 넘겨준다.(아이디, 패스워드)
+                                    intent.putExtra("nickname",Nickname);
 
                                     startActivity(intent);
 
