@@ -1,5 +1,6 @@
 package com.example.move_whole_project.Main_GPS;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -22,7 +23,6 @@ public class Activity_Main extends AppCompatActivity {
     MissionFragment missionFragment;
     ProfileFragment recordFragment;
     ShopFragment shopFragment;
-
     AvatarFragment avatarFragment;
 
 
@@ -39,9 +39,18 @@ public class Activity_Main extends AppCompatActivity {
         shopFragment = new ShopFragment();
         avatarFragment = new AvatarFragment();
 
+        // 인텐트
+
+        Intent intent = getIntent();
+        String Nickname = intent.getStringExtra("nickname");
+
+        Bundle bundle = new Bundle();
+        bundle.putString("nickname",Nickname);
+
+        recordFragment.setArguments(bundle);
+
         // 초기 화면은 홈 프래그먼트로 설정
         getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
-
 
         // BottomNavigationView 기능 구현
         NavigationBarView navigationBarView = findViewById(R.id.bottom_navigationview);
