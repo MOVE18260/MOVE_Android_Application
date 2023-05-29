@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.example.move_whole_project.Main_GPS.Activity_Main;
 import com.example.move_whole_project.R;
+import com.example.move_whole_project.Request.LoginRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -98,6 +99,8 @@ public class Activity_Login extends AppCompatActivity {
                                     Intent intent = new Intent(Activity_Login.this, Activity_Main.class);
                                     // 다음 인텐트로 넘어갈때 이곳에서 작성했던 내용을 넘겨준다.(아이디, 패스워드)
                                     intent.putExtra("nickname",Nickname);
+                                    intent.putExtra("email",Email);
+
 
                                     startActivity(intent);
 

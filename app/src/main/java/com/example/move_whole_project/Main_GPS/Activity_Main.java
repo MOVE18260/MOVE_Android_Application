@@ -43,12 +43,14 @@ public class Activity_Main extends AppCompatActivity {
 
         Intent intent = getIntent();
         String Nickname = intent.getStringExtra("nickname");
+        String Email = intent.getStringExtra("email");
 
         Bundle bundle = new Bundle();
         bundle.putString("nickname",Nickname);
+        bundle.putString("email",Email);
 
         recordFragment.setArguments(bundle);
-
+        homeFragment.setArguments(bundle);
         // 초기 화면은 홈 프래그먼트로 설정
         getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
 
