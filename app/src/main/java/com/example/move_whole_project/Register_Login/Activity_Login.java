@@ -72,45 +72,31 @@ public class Activity_Login extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
-                    Response.Listener<JSONObject> responseListener = new Response.Listener<JSONObject>() {
+                    Response.Listener<JSONObject> responseListener = new Response.Listener<JSONObject>(){
                         @Override
                         public void onResponse(JSONObject response) {
                             // JSONObject 형태로 데이터를 담아서 보내준다.(운반체계)
                             // try~catch 로 이를 감싸준다.
                             try {
-                                JSONObject jsonObject = response;
-                                boolean success = jsonObject.getBoolean("success"); // 서버 통신이 잘되었는지 안되었는지 알려준다.
+                                JSONObject jsonObject = response; // 서버 통신이 잘되었는지 안되었는지 알려준다.
+                                String Nickname = jsonObject.getString("nickname");
+                                String Email = jsonObject.getString("email");
 
-                                if(success){ // 로그인에 성공한 경우
+                                Log.d("이메일",Email);
 
-                                    // 서버에서 보내주는 데이터
-                                    String Nickname = jsonObject.getString("nickname");
-                                    String Email = jsonObject.getString("email");
-                                    String Sex = jsonObject.getString("sex");
-                                    String Province = jsonObject.getString("province");
+                                Toast.makeText(getApplicationContext(), "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
 
-                                    Log.d("닉네임",Nickname);
-                                    Log.d("이메일",Email);
-                                    Log.d("성별",Sex);
-                                    Log.d("지역",Province);
+                                Intent intent = new Intent(Activity_Login.this, Activity_Main.class);
+                                // 다음 인텐트로 넘어갈때 이곳에서 작성했던 내용을 넘겨준다.(아이디, 패스워드)
+                                intent.putExtra("nickname",Nickname);
+                                intent.putExtra("email",Email);
 
-                                    Toast.makeText(getApplicationContext(), "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
-
-                                    Intent intent = new Intent(Activity_Login.this, Activity_Main.class);
-                                    // 다음 인텐트로 넘어갈때 이곳에서 작성했던 내용을 넘겨준다.(아이디, 패스워드)
-                                    intent.putExtra("nickname",Nickname);
-                                    intent.putExtra("email",Email);
-
-
-                                    startActivity(intent);
-
-                                } else { // 로그인에 실패한 경우
-                                    Toast.makeText(getApplicationContext(), "로그인에 실패했습니다. 다시 입력 해주세요", Toast.LENGTH_SHORT).show();
-                                    return;
+                                startActivity(intent);
                                 }
-                            } catch (JSONException e) {
+                             catch (JSONException e)
+                                {
                                 e.printStackTrace();
-                            }
+                                }
                         }
                     };
 
@@ -119,6 +105,8 @@ public class Activity_Login extends AppCompatActivity {
                         public void onErrorResponse(VolleyError error) {
                             Log.d("에러","발생");
                         }
+
+
                     };
 
                     // 서버로 Volley를 이용해서 요청을 함

@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public class RegisterRequest extends JsonObjectRequest {
 
     // url 설정(서버 url), 임의로 변경할 수 있음
-    final static private String URL = "http://192.168.0.106:3000/signUp";
+    final static private String URL = "http://192.168.142.48:3000/signUp";
 
     // 생성자 만들기, 회원가입에서 입력받는 데이터(Json형태로 전달)
     public RegisterRequest(JSONObject jsonBody, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {

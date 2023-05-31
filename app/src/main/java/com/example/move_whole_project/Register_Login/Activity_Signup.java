@@ -206,8 +206,8 @@ public class Activity_Signup extends AppCompatActivity {
                                 Log.d("회원","요청");
                                 try{
                                     JSONObject jsonObject = response;
-                                    boolean success = jsonObject.getBoolean("success"); // 서버 통신이 잘되었는지 안되었는지 알려줌
-                                    if(success){ // 회원 등록에 성공한 경우
+                                    long memberId = jsonObject.getLong("memberId");
+                                    if(memberId != 0.1f){ // 회원 등록에 성공한 경우
                                         Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
 
                                         // 회원 등록에 성공했을때 시작하는 인텐트

@@ -9,7 +9,7 @@ import org.json.JSONObject;
 
 public class StepRequest extends JsonObjectRequest {
 
-    final static private String URL= "http://192.168.0.106:3000/step";
+    final static private String URL= "http://192.168.142.48:3000/step";
 
     public StepRequest(JSONObject jsonBody, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener){
         super(Method.PUT, URL, jsonBody, listener, errorListener);

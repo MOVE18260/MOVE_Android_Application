@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         handler = new Handler(Looper.getMainLooper());
-        updateCurrentTime();
+        updateStep();
 
         // 프래그먼트로 email 받아오기
         Email = this.getArguments().getString("email");
@@ -122,51 +122,51 @@ public class HomeFragment extends Fragment implements SensorEventListener {
             }
         };
 
-        send_step();
-
         // Inflate the layout for this fragment
         return view;
     }
 
-    private void updateCurrentTime(){
+    private void updateStep(){
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 // 현재 시간 가져오기
                 Calendar calendar = Calendar.getInstance();
-                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH) + 1;
+                int date = calendar.get(Calendar.DATE);
+                int hour = calendar.get(Calendar.HOUR);
+                int minute = calendar.get(Calendar.MINUTE);
+                int second = calendar.get(Calendar.SECOND);
+
+                Log.d("시간",year+"년 "+month+"월 "+date+"일 "+hour+"시 "+minute+"분 "+second+"초 ");
                 Time = dateFormat.format(calendar.getTime());
+                Log.d("시간",Time);
 
-                jsonBody = new JSONObject();
-                try {
-                    jsonBody.put("email",Email);
-                    jsonBody.put("time",Time);
-                    jsonBody.put("step",totalCnt);
+                // 초가 0이되면 업데이트 하기
+                if(second == 0){
+                    JSONObject jsonBody = new JSONObject();
+                    try{
+                        jsonBody.put("email",Email);
+                        jsonBody.put("step",totalCnt);
+                        jsonBody.put("time",Time);
+                    }
+                    catch (JSONException e){
+                        e.printStackTrace();
+                    }
+                    stepRequest = new StepRequest(jsonBody,listener,errorListener);
+                    queue = Volley.newRequestQueue(getActivity());
+                    queue.add(stepRequest);
                 }
-                catch (JSONException e){
-                    e.printStackTrace();
-                }
 
-                stepRequest = new StepRequest(jsonBody, listener, errorListener);
-                // Log 찍기
-                Log.d("현재 시간",Time);
+                updateStep();
 
-                updateCurrentTime();
             }
-        }, 20000);
+        }, 1000);
     }
 
-    private void send_step(){
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
 
-                queue = Volley.newRequestQueue(getActivity());
-                queue.add(stepRequest);
-                send_step();
-            }
-        }, 30000);
-    }
 
     public void onStart(){
         super.onStart();

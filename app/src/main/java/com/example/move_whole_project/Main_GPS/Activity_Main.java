@@ -78,7 +78,6 @@ public class Activity_Main extends AppCompatActivity {
                         return true;
                 }
                 return false;
-
             }
         });
     }
