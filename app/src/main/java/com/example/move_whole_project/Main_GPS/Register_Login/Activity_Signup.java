@@ -1,4 +1,4 @@
-package com.example.move_whole_project.Register_Login;
+package com.example.move_whole_project.Main_GPS.Register_Login;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -206,19 +206,17 @@ public class Activity_Signup extends AppCompatActivity {
                                 Log.d("회원","요청");
                                 try{
                                     JSONObject jsonObject = response;
-                                    long memberId = jsonObject.getLong("memberId");
-                                    if(memberId != 0.1f){ // 회원 등록에 성공한 경우
-                                        Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+                                    String Nickname = jsonObject.getString("nickname");
+                                    String Email = jsonObject.getString("email");
+                                    Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
 
-                                        // 회원 등록에 성공했을때 시작하는 인텐트
-                                        Intent intent = new Intent(Activity_Signup.this, Activity_SignupDone.class);
 
-                                        startActivity(intent);
-                                    }
-                                    else{ // 회원 등록에 실패한 경우
-                                        Toast.makeText(getApplicationContext(), "회원 등록에 실패했습니다.",Toast.LENGTH_SHORT).show();
-                                        return;
-                                    }
+                                    // 회원 등록에 성공했을때 시작하는 인텐트
+                                    Intent intent = new Intent(Activity_Signup.this, Activity_SignupDone.class);
+
+                                    intent.putExtra("nickname",Nickname);
+                                    intent.putExtra("email",Email);
+                                    startActivity(intent);
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();

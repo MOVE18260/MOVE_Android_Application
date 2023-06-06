@@ -8,7 +8,7 @@
     android:background="#DEE2E6"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Register_Login.Activity_Signup">
+    tools:context=".Main_GPS.Register_Login.Activity_Signup">
 
     <TextView
         android:layout_width="match_parent"

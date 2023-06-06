@@ -1,6 +1,10 @@
 package com.example.move_whole_project.Main_GPS;
 
+import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -32,12 +36,15 @@ public class Activity_Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         // 프래그 먼트(화면 선언)
         homeFragment = new HomeFragment();
         missionFragment = new MissionFragment();
         recordFragment = new ProfileFragment();
         shopFragment = new ShopFragment();
         avatarFragment = new AvatarFragment();
+
+
 
         // 인텐트
 
@@ -81,4 +88,5 @@ public class Activity_Main extends AppCompatActivity {
             }
         });
     }
+
 }

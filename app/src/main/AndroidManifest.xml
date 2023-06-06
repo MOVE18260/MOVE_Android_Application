@@ -55,23 +55,23 @@
             android:screenOrientation="portrait"/> <!-- 하단 메뉴 액티비티-->
 
         <activity
-            android:name=".Register_Login.Activity_Login"
+            android:name=".Main_GPS.Register_Login.Activity_Login"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".Register_Login.Activity_Signup"
+            android:name=".Main_GPS.Register_Login.Activity_Signup"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".Register_Login.Activity_SignupDone"
+            android:name=".Main_GPS.Register_Login.Activity_SignupDone"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".Register_Login.YearMonthPicker"
+            android:name=".Main_GPS.Register_Login.YearMonthPicker"
             android:exported="false"
             android:screenOrientation="portrait"/> <!-- 시작화면 액티비티 -->
         <activity
-            android:name=".Register_Login.Activity_Start"
+            android:name=".Main_GPS.Register_Login.Activity_Start"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

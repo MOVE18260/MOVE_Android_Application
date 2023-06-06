@@ -140,6 +140,7 @@ public class Activity_GPS extends AppCompatActivity implements AutoPermissionsLi
             }
         });
 
+
         // GPS 위치 서비스
         manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         gpsListener = new GPSListener();

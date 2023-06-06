@@ -1,4 +1,4 @@
-package com.example.move_whole_project.Register_Login;
+package com.example.move_whole_project.Main_GPS.Register_Login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -105,8 +105,6 @@ public class Activity_Login extends AppCompatActivity {
                         public void onErrorResponse(VolleyError error) {
                             Log.d("에러","발생");
                         }
-
-
                     };
 
                     // 서버로 Volley를 이용해서 요청을 함

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register_Login.Activity_Login"
+    tools:context=".Main_GPS.Register_Login.Activity_Login"
     android:orientation="vertical"
     android:layout_gravity="center"
     android:background="#DEE2E6">

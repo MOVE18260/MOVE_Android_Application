@@ -1,4 +1,4 @@
-package com.example.move_whole_project.Register_Login;
+package com.example.move_whole_project.Main_GPS.Register_Login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,14 +25,17 @@ public class Activity_SignupDone extends AppCompatActivity {
         btn_start = findViewById(R.id.btn_start);
 
         Intent intent = getIntent();
-        String userNickname = intent.getStringExtra("userNickname");
+        String Nickname = intent.getStringExtra("nickname");
+        String Email = intent.getStringExtra("email");
 
-        tv_nickname.setText(userNickname+"님!");
+        tv_nickname.setText(Nickname+"님!");
 
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Activity_SignupDone.this, Activity_Main.class);
+                intent.putExtra("nickname",Nickname);
+                intent.putExtra("email",Email);
                 startActivity(intent);
 
             }

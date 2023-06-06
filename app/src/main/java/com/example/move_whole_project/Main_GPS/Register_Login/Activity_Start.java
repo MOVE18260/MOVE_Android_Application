@@ -1,4 +1,4 @@
-package com.example.move_whole_project.Register_Login;
+package com.example.move_whole_project.Main_GPS.Register_Login;
 
 import android.content.Intent;
 import android.os.Bundle;
